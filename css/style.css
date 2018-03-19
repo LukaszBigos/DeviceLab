@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 body {
     color: #444;
     font-family: 'Nunito Semibold', 'Lucida Sans Unicode';
@@ -7,9 +12,35 @@ body {
 #container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, minmax(100px, auto));
     grid-column-gap: 5px;
     max-width: 960px;
     margin: 0 auto;
+}
+
+header {
+    display: grid;
+    grid-column: 1 / 13;
+    background-color: antiquewhite;
+    grid-template-rows: repeat(5, minmax(10px, auto));
+}
+
+header > h1 {
+    grid-column: 5 / 9;
+    grid-row: 2 / 4;
+}
+
+header p {
+    grid-column: 10 / 13;
+    grid-row: 1 / 2;
+}
+
+header p:nth-child(3) {
+    grid-row: 2 / 3;
+}
+
+header p:nth-child(4) {
+    grid-row: 5 / 6;
 }
 
 img {
