@@ -43,6 +43,7 @@ header section p:nth-child(3) {
 main {
     display: grid;
     grid-column: 1 / 13;
+    grid-template-rows: repeat(5, minmax(50px, auto));
 }
 
 main > section {
@@ -68,8 +69,27 @@ main > section {
 }
 
 #device-info img {
-    grid-culmn: 2 / 3;
+    grid-column: 2 / 3;
     max-width: 200px;
     justify-self: center;
     align-self: stretch;
+}
+
+#searcher {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: repeat(2, minmax(50px, auto));
+}
+
+#filter-device-label {
+    grid-row-start: 1;
+    grid-column: 1 / 2;
+    margin-top: 10px;
+    justify-self: start;
+    padding-left: 10px;
+}
+
+#filter-device {
+    margin: 0 5px 0 5px ;
+    border-color: aquamarine;
 }
