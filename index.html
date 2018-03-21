@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <title>Document</title>
@@ -31,19 +32,16 @@
                 <img src="/assets/img/pexels-photo-270686.jpeg" alt="device name">
             </section>
 
-            <div id="searcher">
-                <label for="filter-device" id="filter-device-label">Filter Device</label>
-                <input type="text" placeholder="Type here" id="filter-device">
-            </div>
-            
-
             <!-- button to extra page Add Device -->
-            <input type="submit" value="Add Device">
+            <input type="submit" value="Add Device" class="blue-btn">
+
+            <input type="text" placeholder="Search device..." id="filter-device">
+
 
             <!-- table with all the devices assigned to the team -->
             <table>
                 <thead>
-                    <tr>
+                    <tr id="device-list">
                         <th>Name</th>
                         <th>OS</th>
                         <th>Status</th>
@@ -53,6 +51,10 @@
                 <tbody></tbody>
             </table>
         </main>
+
+        <footer>
+            <p>Thanks for using:)</p>   
+        </footer>
     </div>
     
 </body>

@@ -5,14 +5,14 @@
 
 body {
     color: #444;
-    font-family: 'Nunito Semibold', 'Lucida Sans Unicode';
+    font-family: 'Open Sans Condensed', arial, sans;
     text-align: center;
 }
 
 #container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, minmax(100px, auto));
+    grid-template-rows: repeat(5, minmax(50px, auto));
     grid-column-gap: 5px;
     max-width: 960px;
     margin: 0 auto;
@@ -75,21 +75,84 @@ main > section {
     align-self: stretch;
 }
 
-#searcher {
-    display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: repeat(2, minmax(50px, auto));
-}
-
-#filter-device-label {
-    grid-row-start: 1;
-    grid-column: 1 / 2;
-    margin-top: 10px;
-    justify-self: start;
-    padding-left: 10px;
-}
-
 #filter-device {
-    margin: 0 5px 0 5px ;
+    margin: 20px 0 15px 0;
     border-color: aquamarine;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    height: 45px;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #2a3d44;
 }
+
+#filter-device:focus {
+    border: none;
+    border-bottom: 1px solid rgb(193, 224, 245);
+    outline: none;   
+}
+
+input:focus::-webkit-input-placeholder { 
+    color:transparent; 
+}
+
+input:focus:-moz-placeholder { 
+    color:transparent; 
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:#a3c4d1;
+    opacity: 1; /* Firefox */
+}
+
+.blue-btn {
+    background-color: #30ace5;
+    color: #fff;
+    font-size: larger;
+    border-radius: 3mm;
+}
+
+#device-list {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(50px, auto));
+    grid-template-areas: 
+    "name os status details remover";
+}
+
+#device-list th:nth-child(1) {
+    grid-area: name;
+}
+
+#device-list th:nth-child(2) {
+    grid-area: os;
+}
+
+#device-list th:nth-child(3) {
+    grid-area: status;
+}
+
+#device-list th:nth-child(4) {
+    grid-area: details;
+}
+
+#device-list th:nth-child(5) {
+    grid-area: remover;
+}
+
+footer {
+    background-color: black;
+    grid-column: 1 / 13;
+    grid-row: 4 / 5;
+    color: white;
+    border-radius: 5mm;
+    display: grid;
+    grid-template-rows: 1;
+}
+
+footer p {
+    align-self: center;
+    font-size: 15px;
+    font-weight: 400;
+}
+
