@@ -4,7 +4,9 @@
   "description": "maintaining mobile devices lab within dev teams",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "mongoose": "^5.0.12",
     "nodemon": "^1.17.2"
   },
   "devDependencies": {
