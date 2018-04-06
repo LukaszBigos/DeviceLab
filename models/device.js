@@ -1,12 +1,24 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var DeviceSchema = new Schema(
+const  DeviceSchema = new Schema(
     {
-        name: {type: String, required: true, max: 100},
-        model: {type: String, required: true, max: 200},
-        OS: {type: String, ref: 'OS', required: true, max: 50},
+        name: {
+            type: String, 
+            required: [true, 'Name field is required'], 
+            max: 100
+        },
+        model: {
+            type: String, 
+            required: true, 
+            max: 200
+        },
+        OS: {
+            type: String,
+            ref: 'OS',
+            required: true, max: 50
+        }
     }
 
     //virtual methods for adding e.g. url to particular device?

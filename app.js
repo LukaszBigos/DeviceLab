@@ -1,17 +1,22 @@
-var express = require('express');
-const routes = require('./routes/api');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-var app = express();
-app.use(routes);
+//set up express app
+const app = express();
 
-//Set up mongoose connection
-// var mongoose = require('mongoose');
-// var mongoDB = 'mongodb://<dbuser>:<dbpassword>@ds235169.mlab.com:35169/device_lab';
-// mongoose.connect(mongoDB);
-// mongoose.Promise = global.Promise;
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+//connection to mongodb
+mongoose.connect('mongodb://localhost/devicelab');
+mongoose.Promise = global.Promise;
 
-app.listen(3000, () => {
+
+app.use(bodyParser.json());
+
+
+// initialize  routes
+app.use('/api', require('./routes/api'));
+
+
+app.listen(process.env.port || 3000, () => {
     console.log('app is ready and listens on port 3000');
 });

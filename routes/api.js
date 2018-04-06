@@ -8,7 +8,12 @@ router.get('/devices', function(req, res) {
 
 //add a new device to db
 router.post('/devices', function(req, res) {
-    res.send({type: 'POST'}); 
+    console.log(req.body);
+    res.send({
+        type: 'POST',
+        name: req.body.name,
+        OS: req.body.OS,
+    }); 
 });
 
 //update devices in db
