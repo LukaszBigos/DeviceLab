@@ -2,26 +2,30 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const  DeviceSchema = new Schema(
-    {
-        name: {
-            type: String, 
-            required: [true, 'Name field is required'], 
-            max: 100
-        },
-        model: {
-            type: String, 
-            required: true, 
-            max: 200
-        },
-        OS: {
-            type: String,
-            ref: 'OS',
-            required: true, max: 50
-        }
+const DeviceSchema = new Schema({
+    name: {
+        type: String, 
+        required: [true, 'Name field is required'], 
+        max: 100
+    },
+    model: {
+        type: String, 
+        required: true, 
+        max: 200
+    },
+    OS: {
+        type: String,
+        ref: 'OS',
+        required: true, 
+        max: 50
+    },
+    team: {
+        type: String,
+        max: 100
     }
-
     //virtual methods for adding e.g. url to particular device?
-);
+});
 
-module.exports = mongoose.model('Device', DeviceSchema);
+const Device = mongoose.model('device', DeviceSchema);
+
+module.exports = Device;

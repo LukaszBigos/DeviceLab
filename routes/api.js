@@ -1,5 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const Device = require('../models/device');
+
+
+router.get('/', function(req, res) {
+    res.send('test home page update'); 
+});
 
 //get list of devices from db
 router.get('/devices', function(req, res) {
@@ -8,12 +14,9 @@ router.get('/devices', function(req, res) {
 
 //add a new device to db
 router.post('/devices', function(req, res) {
-    console.log(req.body);
-    res.send({
-        type: 'POST',
-        name: req.body.name,
-        OS: req.body.OS,
-    }); 
+    Device.create(req.body).then(function(device) {
+        res.send(device);
+    });
 });
 
 //update devices in db
@@ -24,10 +27,6 @@ router.put('/devices/:id', function(req, res) {
 //delete a devices from db
 router.delete('/devices/:id', function(req, res) {
     res.send({type: 'DELETE'});
-});
-
-router.get('/', function(req, res) {
-    res.send('test home page update'); 
 });
 
 module.exports = router;
