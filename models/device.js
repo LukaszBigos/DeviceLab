@@ -13,7 +13,7 @@ const DeviceSchema = new Schema({
         required: true, 
         max: 200
     },
-    OS: {
+    os: {
         type: String,
         ref: 'OS',
         required: true, 
@@ -26,6 +26,6 @@ const DeviceSchema = new Schema({
     //virtual methods for adding e.g. url to particular device?
 });
 
-const Device = mongoose.model('device', DeviceSchema);
+const Device = mongoose.model('Device', DeviceSchema);
 
 module.exports = Device;

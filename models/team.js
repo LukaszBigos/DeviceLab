@@ -1,10 +1,10 @@
 //to be considered at later point, perhaps
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var TeamSchema = new Schema(
+const TeamSchema = new Schema(
     {
         name: {type: String, required: true, max: 100},
         member: {type: String, required: true, max: 100}
