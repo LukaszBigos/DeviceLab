@@ -9,7 +9,9 @@ router.get('/', function(req, res, next) {
 
 //get list of devices from db
 router.get('/devices', function(req, res, next) {
-    res.send('test page for device list'); 
+    Device.find({}).then(function(device){
+        res.send(device);
+    });
 });
 
 //add a new device to db
@@ -21,12 +23,18 @@ router.post('/devices', function(req, res, next) {
 
 //update devices in db
 router.put('/devices/:id', function(req, res, next) {
-    res.send({type: 'PUT'});
+    Device.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+        Device.findOne({_id: req.params.id}).then(function(device){
+            res.send(device);
+        });       
+    });
 });
 
 //delete a devices from db
 router.delete('/devices/:id', function(req, res, next) {
-    res.send({type: 'DELETE'});
+    Device.findByIdAndRemove({_id: req.params.id}).then(function(device){
+        res.send(device); 
+    }); 
 });
 
 module.exports = router;
