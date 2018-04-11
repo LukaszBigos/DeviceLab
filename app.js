@@ -9,7 +9,7 @@ const app = express();
 mongoose.connect('mongodb://localhost/devicelab');
 mongoose.Promise = global.Promise;
 
-app.use(express.static('public'));
+app.use(express.static('client'));
 
 app.use(bodyParser.json());
 

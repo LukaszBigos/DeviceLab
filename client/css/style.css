@@ -166,6 +166,18 @@ footer p {
     font-weight: 400;
 }
 
+#get-devices {
+    width: 15%;
+}
+
+#data-fetch {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(50px, auto));
+    grid-template-areas: 
+    "name os status details remover";
+}
+
 @media screen and (max-width: 600px) {
     #container {
         grid-template-columns: 1fr;        

@@ -29,7 +29,7 @@
                     <p>Contact person</p>
                     <p>More details - nav to another page</p>
                 </div>
-                <img src="/assets/img/pexels-photo-270686.jpeg" alt="device name">
+                <img src="./assets/img/pexels-photo-270686.jpeg" alt="device name">
             </section>
 
             <!-- button to extra page Add Device -->
@@ -37,6 +37,7 @@
 
             <input type="text" placeholder="Search device..." id="filter-device">
 
+            <button id="get-devices" class="blue-btn">Get Devices</button>
 
             <!-- table with all the devices assigned to the team -->
             <table>
@@ -48,7 +49,7 @@
                         <th>More details</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id="data-fetch"></tbody>
             </table>
         </main>
 
@@ -56,6 +57,6 @@
             <p>Thanks for using:)</p>   
         </footer>
     </div>
-    
+    <script src="scripts/app.js"></script>
 </body>
 </html>
