@@ -124,13 +124,13 @@ input:focus:-moz-placeholder {
 
 #device-list {
     margin-top: 35px;
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(5, minmax(50px, auto));
     grid-template-areas: 
-    "name os status details remover";
+    "name os status details remover"; */
 }
 
-#device-list th:nth-child(1) {
+/* #device-list th:nth-child(1) {
     grid-area: name;
 }
 
@@ -148,7 +148,7 @@ input:focus:-moz-placeholder {
 
 #device-list th:nth-child(5) {
     grid-area: remover;
-}
+}  */
 
 footer {
     background-color: black;
@@ -170,12 +170,8 @@ footer p {
     width: 15%;
 }
 
-#data-fetch {
-    margin-top: 35px;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(50px, auto));
-    grid-template-areas: 
-    "name os status details remover";
+#data-fetch td{
+    padding: 10px;
 }
 
 @media screen and (max-width: 600px) {

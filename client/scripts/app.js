@@ -13,9 +13,18 @@ function loadDevices(){
             let output = '';
             for(let i in devices){
                 output += `
-                <tr grid-area: name>
+                <tr>
                 <td>
                 ${devices[i].name}
+                </td>
+                <td>
+                ${devices[i].model}
+                </td>
+                <td>
+                ${devices[i].os}
+                </td>
+                <td>
+                ${devices[i].team}
                 </td>
                 </tr>`;
             }
