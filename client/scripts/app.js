@@ -1,6 +1,10 @@
 console.log('test');
 
-document.getElementById('get-devices').addEventListener('click', loadDevices);
+const getDevices = document.getElementById('get-devices');
+const dataFetch = document.getElementById('data-fetch');
+dataFetch.style.display = 'none';
+
+getDevices.addEventListener('click', loadDevices);
 
 function loadDevices(){
     const xhr = new XMLHttpRequest();
@@ -28,9 +32,21 @@ function loadDevices(){
                 </td>
                 </tr>`;
             }
-            document.getElementById('data-fetch').innerHTML = output;
+            dataFetch.innerHTML = output;
         }
     }
 
     xhr.send();
+    getDevices.innerHTML = 'Hide Devices';
+
+    if (dataFetch.style.display === 'none') {
+        dataFetch.style.display = 'table-footer-group';
+    }
+
+    else {
+        dataFetch.style.display = 'none';
+        getDevices.innerHTML = 'Show Devices';
+
+    }
+
 }
