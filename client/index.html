@@ -17,11 +17,11 @@
             <form id="device-form">
                 <div>
                     <label for="">Name</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" required minlength="2">
                 </div>
                 <div>
                     <label for="os">OS</label>
-                    <input type="text" id="os">
+                    <input type="text" id="os" required minlength="3">
                 </div>
                 <div>
                     <label for="status">Status</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <label for="team">Team</label>
-                    <input type="text" id="team">
+                    <input type="text" id="team" required minlength="2">
                 </div>
             </form>
             <input type="submit" value="Add Device" class="blue-btn">
