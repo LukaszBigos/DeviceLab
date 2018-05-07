@@ -9,6 +9,71 @@ body {
     text-align: center;
 }
 
+#device-modal {
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17); 
+}
+
+.close-btn {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#device-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#device-form > div  {
+    padding: 10px
+}
+
+#device-form input {
+    border:none;
+    border-bottom: 1px solid #d1ffea;
+    padding: 5px;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-left: 15px
+}
+
+#device-form input:focus {
+    outline: none;
+}
+
+#device-modal .blue-btn {
+    font-size: 12px;
+    width: 40%;
+    height: 25px;
+    margin-top: 10px;
+}
+
 input {
     border:none;
     background-image:none;

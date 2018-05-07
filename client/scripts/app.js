@@ -46,7 +46,6 @@ function loadDevices(){
     else {
         dataFetch.style.display = 'none';
         getDevices.innerHTML = 'Show Devices';
-
     }
 
 }

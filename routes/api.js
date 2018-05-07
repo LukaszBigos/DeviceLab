@@ -15,8 +15,8 @@ router.get('/devices', (req, res, next) => {
 });
 
 //add a new device to db
-router.post('/devices', (req, res, next) =>{
-    Device.create(req.body).then((device) =>{
+router.post('/devices', (req, res, next) => {
+    Device.create(req.body).then((device) => {
         res.send(device);
     }).catch(next);
 });
