@@ -51,12 +51,13 @@ const DeviceCtrl = (() => {
     //         getDevices.innerHTML = 'Show Devices';
     //     }    
     // }
-
-    return {
-        getDevices: loadDevices()
     }
 
-}
+    return {
+        getDevices: () => {
+            return loadDevices();
+        }
+    }
 })();
 
 // UI Controller
@@ -80,6 +81,8 @@ const AppCtrl = ((DeviceCtrl, UICtrl) => {
     return {
         init: function() {
             console.log('App initialized...');
+            const devices = DeviceCtrl.getDevices();
+            console.log(devices);
         }
     }
 

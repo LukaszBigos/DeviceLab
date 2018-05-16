@@ -31,7 +31,7 @@ router.put('/devices/:id', (req, res, next) =>{
 });
 
 //delete a devices from db
-router.delete('/devices/:id', (req, res, next) =>{
+router.delete('/devices/:id', (req, res, next) => {
     Device.findByIdAndRemove({_id: req.params.id}).then((device) => {
         res.send(device); 
     }); 

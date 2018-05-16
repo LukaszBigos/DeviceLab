@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
+    "start": "cd server && nodemon app.js",
     "mongo": "cd C:\\Program Files\\MongoDB\\Server\\3.6\\bin && mongod"
   },
   "repository": {
