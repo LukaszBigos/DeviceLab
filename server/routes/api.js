@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const Device = require('../models/device');
+const path = require('path');
 
 
 router.get('/', (req, res, next) => {
-    res.send('test home page update'); 
+    res.render('./../client/index.html'); 
+    // res.send('test 2222');
 });
 
 //get list of devices from db

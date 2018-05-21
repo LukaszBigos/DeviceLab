@@ -6,11 +6,13 @@ const DeviceCtrl = (() => {
     
     // Device Constructor
     const Device = (name, model, os, team) => {
-
+    
     }
 
     function loadDevices() {
         const xhr = new XMLHttpRequest();
+        const dataFetch = document.getElementById('data-fetch');
+
         xhr.open('GET', 'http://localhost:3000/api/devices', true);
     
         xhr.onload = () => {
@@ -82,7 +84,7 @@ const AppCtrl = ((DeviceCtrl, UICtrl) => {
         init: function() {
             console.log('App initialized...');
             const devices = DeviceCtrl.getDevices();
-            console.log(devices);
+            // console.log(devices);
         }
     }
 
