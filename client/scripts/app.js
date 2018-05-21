@@ -6,12 +6,13 @@ const DeviceCtrl = (() => {
     
     // Device Constructor
     const Device = (name, model, os, team) => {
-    
+        //to be used for sending data to db
     }
 
     function loadDevices() {
         const xhr = new XMLHttpRequest();
         const dataFetch = document.getElementById('data-fetch');
+        const getDevices = document.getElementById('get-devices');
 
         xhr.open('GET', 'http://localhost:3000/api/devices', true);
     
@@ -42,17 +43,16 @@ const DeviceCtrl = (() => {
         }
     
         xhr.send();
-        // getDevices.innerHTML = 'Hide Devices';
+        getDevices.innerHTML = 'Hide Devices';
     
-    //     if (dataFetch.style.display === 'none') {
-    //         dataFetch.style.display = 'table-footer-group';
-    //     }
+        if (dataFetch.style.display === 'none') {
+            dataFetch.style.display = 'table-footer-group';
+        }
     
-    //     else {
-    //         dataFetch.style.display = 'none';
-    //         getDevices.innerHTML = 'Show Devices';
-    //     }    
-    // }
+        else {
+            dataFetch.style.display = 'none';
+            getDevices.innerHTML = 'Show Devices';
+        }
     }
 
     return {
@@ -70,7 +70,7 @@ const UICtrl = (() => {
     const dataFetch = document.getElementById('data-fetch');
     dataFetch.style.display = 'none';
 
-    // getDevices.addEventListener('click', DeviceCtrl.getDevices());
+    getDevices.addEventListener('click', DeviceCtrl.getDevices);
 
 })();
 
@@ -83,7 +83,7 @@ const AppCtrl = ((DeviceCtrl, UICtrl) => {
     return {
         init: function() {
             console.log('App initialized...');
-            const devices = DeviceCtrl.getDevices();
+            // const devices = DeviceCtrl.getDevices();
             // console.log(devices);
         }
     }

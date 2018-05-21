@@ -5,8 +5,7 @@ const path = require('path');
 
 
 router.get('/', (req, res, next) => {
-    res.render('./../client/index.html'); 
-    // res.send('test 2222');
+    res.render('./../client/index.html');
 });
 
 //get list of devices from db
