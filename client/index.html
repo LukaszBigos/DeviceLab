@@ -10,34 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <div id="device-modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Add Device</h2>
-            <form id="device-form">
-                <div>
-                    <label for="">Name</label>
-                    <input type="text" id="name" required minlength="2">
-                </div>
-                <div>
-                    <label for="os">OS</label>
-                    <input type="text" id="os" required minlength="3">
-                </div>
-                <div>
-                    <label for="status">Status</label>
-                    <select>
-                        <option value="available">Available</option>
-                        <option value="not available">Not available</option>
-                      </select>
-                </div>
-                <div>
-                    <label for="team">Team</label>
-                    <input type="text" id="team" required minlength="2">
-                </div>
-            </form>
-            <input type="submit" value="Add Device" class="blue-btn">
-        </div>
-    </div> -->
+    
     <div id="container">
         <header>
             <h1>Device Lab</h1>
@@ -61,7 +34,39 @@
             </section>
 
             <!-- button to extra page Add Device -->
-            <input type="submit" value="Add Device" class="blue-btn">
+            <!-- <input type="submit" value="Add Device" class="blue-btn"> -->
+
+            <!-- Adding devices section -->
+        
+            <div id="add-device">
+                <h2>Add Device</h2>
+                <form id="device-form">
+                    <div>
+                        <label for="">Name</label>
+                        <input type="text" id="name" required minlength="2" placeholder="Device Name...">
+                    </div>
+                    <div>
+                        <label for="os">OS</label>
+                        <input type="text" id="os" required minlength="3" placeholder="Operating system...">
+                    </div>
+                    <div>
+                        <label for="status">Status</label>
+                        <select>
+                            <option value="available">Available</option>
+                            <option value="not available">Not available</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="team">Team</label>
+                        <select>
+                            <option value="ESOMS Mobile">ESOMS Mobile</option>
+                            <option value="ESOMS Core">ESOMS Core</option>
+                        </select>
+                    </div>
+                </form>
+                <input type="submit" value="Add Device" class="blue-btn">
+            </div>
+        
 
             <input type="text" placeholder="Search device..." id="filter-device">
 
