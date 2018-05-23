@@ -108,16 +108,17 @@ main > section {
 
 #device-form > div  {
     padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     align-items: center;
 }
 
 #device-form label {
     align-items: center;
-    grid-column: 2 / 3;
+    /* grid-column: 2 / 3; */
 }
 
 #device-form input {
-    grid-column: 4 / 5;
     border: none;
     border-bottom: 1px solid #ddd;
     padding: 5px;
@@ -130,7 +131,7 @@ main > section {
     color: #555;
     align-self: center;
     font-weight: lighter;
-    max-width: 50%;
+    max-width: 70%;
 }
 
 select {
@@ -138,7 +139,7 @@ select {
     font-size: 16px;
     color: #555;
     margin: 6px 0px 6px 15px;
-    max-width: 52%;
+    max-width: 72%;
 }
 
 #device-form input:focus {
