@@ -43,7 +43,7 @@
                 <form id="device-form">
                     <div>
                         <label for="">Name</label>
-                        <input type="text" id="name" required minlength="2" placeholder="Device Name...">
+                        <input type="text" id="device-name" required minlength="2" placeholder="Device Name...">
                     </div>
                     <div>
                         <label for="os">OS</label>
@@ -51,26 +51,26 @@
                     </div>
                     <div>
                         <label for="status">Status</label>
-                        <select>
+                        <select id="status">
                             <option value="available">Available</option>
                             <option value="not available">Not available</option>
                         </select>
                     </div>
                     <div>
                         <label for="team">Team</label>
-                        <select>
+                        <select id="team">
                             <option value="ESOMS Mobile">ESOMS Mobile</option>
                             <option value="ESOMS Core">ESOMS Core</option>
                         </select>
                     </div>
                 </form>
-                <input type="submit" value="Add Device" class="blue-btn">
+                <input type="submit" value="Add Device" id="add-device-btn" class="blue-btn">
             </div>
         
 
             <input type="text" placeholder="Search device..." id="filter-device">
 
-            <button id="get-devices" class="blue-btn">Show Devices</button>
+            <button id="show-device-btn" class="blue-btn">Show Devices</button>
 
             <!-- table with all the devices assigned to the team -->
             <table id="device-list">
@@ -90,6 +90,8 @@
             <p>Thanks for using:)</p>   
         </footer>
     </div>
+    <script src="src/http.js"></script>
+    <script src="src/ui.js"></script>
     <script src="src/index.js"></script>
 </body>
 </html>
