@@ -2,7 +2,6 @@
   "name": "devicelab",
   "version": "1.0.0",
   "description": "maintaining mobile devices lab within dev teams",
-  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
@@ -21,7 +20,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon starter.js",
+    "start": "cd server && nodemon app",
     "mongo": "cd C:\\Program Files\\MongoDB\\Server\\3.6\\bin && mongod",
     "build": "webpack"
   },
