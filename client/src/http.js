@@ -49,3 +49,5 @@ class CustomHTTP {
         return resData;        
     }
 }
+
+// export const http = new CustomHTTP();

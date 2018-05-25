@@ -6,27 +6,39 @@ class UI {
           this.teamInput = document.querySelector('#team');
           this.addDeviceButton = document.querySelector('#add-device-btn');
           this.dataFetch = document.getElementById('data-fetch');
+          this.state = 'add'; 
     }
     showDevices(devices) {
+        console.log('z ui show devices',  devices);
         let output = '';
-                for(let i in devices){
-                    output += `
-                    <tr>
+        
+        devices.forEach( (device) => {
+            output += ` 
+                <tr>
                     <td> 
-                    ${devices[i].name}
+                    ${device.name}
                     </td>
                     <td>
-                    ${devices[i].model}
+                    ${device.model}
                     </td>
                     <td>
-                    ${devices[i].os}
+                    ${device.os}
                     </td>
                     <td>
-                    ${devices[i].team}
+                    ${device.team}
                     </td>
-                    </tr>`;
-                }
-                dataFetch.innerHTML = output;
+                    <td>
+                    <a href="#" data-id="${device.id}">
+                        <i class="fas fa-edit"></i>
+                    </a> 
+
+                    <a href="#" data-id="${device.id}">
+                    <i class="fas fa-trash"></i>
+                    </a> 
+                    </td>
+                </tr>`;
+        });
+            this.dataFetch.innerHTML = output;
     }
 }
 
