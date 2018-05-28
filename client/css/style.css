@@ -7,6 +7,7 @@ body {
     color: #444;
     font-family: 'Open Sans Condensed', arial, sans;
     text-align: center;
+    font-size: 16px;
 }
 
 #container {
@@ -249,6 +250,30 @@ footer p {
 
 #data-fetch td{
     padding: 10px;
+}
+
+#data-fetch i {
+    color: #30ace5;
+    font-size: 80%;
+}
+
+#data-fetch i.fa-edit:hover {
+    color: darkblue;
+    font-size: 100%; 
+}
+
+#data-fetch i.fa-trash {
+    color: orangered;  
+   
+}
+
+#data-fetch i.fa-trash:hover {
+    color: red;
+    font-size: 100%; 
+}
+
+.fa-trash {
+    margin-left: 3px;
 }
 
 @media screen and (max-width: 600px) {

@@ -19,10 +19,10 @@ class UI {
                     ${device.name}
                     </td>
                     <td>
-                    ${device.model}
+                    ${device.os}
                     </td>
                     <td>
-                    ${device.os}
+                    ${device.status}
                     </td>
                     <td>
                     ${device.team}

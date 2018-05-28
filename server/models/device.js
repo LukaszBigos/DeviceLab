@@ -8,14 +8,14 @@ const DeviceSchema = new Schema({
         required: [true, 'Name field is required'], 
         max: 100
     },
-    model: {
-        type: String, 
-        required: true, 
-        max: 200
-    },
     os: {
         type: String,
-        ref: 'OS',
+        // ref: 'OS',
+        required: true, 
+        max: 50
+    },
+    status: {
+        type: String, 
         required: true, 
         max: 50
     },
