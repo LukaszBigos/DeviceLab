@@ -40,6 +40,45 @@ class UI {
         });
             this.dataFetch.innerHTML = output;
     }
+
+    showAlert(message, className) {
+        
+        this.clearAlert();
+
+        const div = document.createElement('div');
+        
+        div.className = className;
+
+        div.appendChild(document.createTextNode(message));
+        
+        // Get parent
+        const container = document.querySelector('main');
+
+        //Get element before which alert will be displayed
+        const searchDevice = document.querySelector('#filter-device');
+
+        // Insert alert div
+        container.insertBefore(div, searchDevice)
+
+        // Timeout
+        setTimeout(() => {
+            this.clearAlert();
+        }, 30000);
+
+    }
+
+    clearAlert() {
+        const currentAlert = document.querySelector('.alert-success');
+
+        if(currentAlert) {
+            currentAlert.remove();
+        }
+    }
+
+    clearFields() {
+        this.deviceInput.value = '';
+        this.osInput.value = '';
+    }
 }
 
 // export const ui = new UI;

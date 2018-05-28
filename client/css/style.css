@@ -324,4 +324,11 @@ footer p {
 
   }
 
+  /* for alert */
+  .alert-success {
+    color: darkgreen;
+    height: 20px;
+    background: #058f3a;
+  }
+
 

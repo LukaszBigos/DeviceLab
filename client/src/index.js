@@ -33,6 +33,8 @@ function submitDevice() {
     // Create Device
     http.post('http://localhost:3000/api/devices', data)
         .then(data => {
+            ui.showAlert('New device added', 'alert-success');
+            ui.clearFields();
             getDevices();
         })
         .catch(err => console.log(err))
