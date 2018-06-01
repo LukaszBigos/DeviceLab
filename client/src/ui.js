@@ -60,10 +60,8 @@ class UI {
         // Insert alert div
         container.insertBefore(div, searchDevice)
 
-        // Timeout
-        setTimeout(() => {
-            this.clearAlert();
-        }, 30000);
+        // Remove alert
+        this.clearAlert();
 
     }
 
@@ -71,7 +69,13 @@ class UI {
         const currentAlert = document.querySelector('.alert-success');
 
         if(currentAlert) {
-            currentAlert.remove();
+            setTimeout(() => {
+                currentAlert.style.opacity = '0.4';
+            }, 500);           
+            
+            setTimeout(() => {
+                currentAlert.remove();
+            }, 2500);
         }
     }
 

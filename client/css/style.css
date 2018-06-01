@@ -326,9 +326,17 @@ footer p {
 
   /* for alert */
   .alert-success {
-    color: darkgreen;
-    height: 20px;
-    background: #058f3a;
+    color:#265e3b;
+    background: #b5ddc4;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin-top: 15px;
+    opacity: 1;
+    transition-property: opacity;
+    -webkit-transition: 2000ms linear;
+    transition: 2000ms linear;
   }
 
 
