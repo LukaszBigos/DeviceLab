@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', getDevices);
 document.querySelector('#add-device-btn').addEventListener('click', submitDevice);
 
 // Listen for edit state
-document.querySelector('#device-list').addEventListener('click', enableEdit)
+document.querySelector('#device-list').addEventListener('click', enableEdit);
+
+// Listen for Cancel
+document.querySelector('#add-device').addEventListener('click', cancelEdit);
 
 // Get Devices
 function getDevices() {
@@ -26,21 +29,28 @@ function submitDevice() {
     const status = document.querySelector('#status').value;
     const team = document.querySelector('#team').value;
 
-    const data = {
-        name, // same as name: name etc
-        os,
-        status,
-        team
+    if(name === '' || os === '' || status === '' ||  team === '' ) {
+        ui.showAlert('Please fill in all fields', 'alert-warning');
     }
 
-    // Create Device
-    http.post('http://localhost:3000/api/devices', data)
-        .then(data => {
-            ui.showAlert('New device added', 'alert-success');
-            ui.clearFields();
-            getDevices();
-        })
-        .catch(err => console.log(err))
+    else {
+        const data = {
+            name, // same as name: name etc
+            os,
+            status,
+            team
+        }
+    
+        // Create Device
+        http.post('http://localhost:3000/api/devices', data)
+            .then(data => {
+                ui.showAlert('New device added', 'alert-success');
+                ui.clearFields();
+                getDevices();
+            })
+            .catch(err => console.log(err))
+    }
+ 
 }
 
 // Enable Edit State
@@ -65,5 +75,13 @@ function enableEdit(e) {
         ui.fillForm(data);
     }
 
+    e.preventDefault();
+}
+
+// Cancel Edit State
+function cancelEdit(e) {
+    if(e.target.classList.contains('cancel')) {
+        ui.changeFormState('add');
+    }
     e.preventDefault();
 }

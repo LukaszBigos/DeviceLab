@@ -58,15 +58,15 @@ class UI {
     }
 
     clearAlert() {
-        const currentAlert = document.querySelector('.alert-success');
+        const currentAlert = document.querySelectorAll('.alert-success, .alert-warning');
 
-        if(currentAlert) {
+        if(currentAlert.length > 0) {
             setTimeout(() => {
-                currentAlert.style.opacity = '0.4';
+                currentAlert[0].style.opacity = '0.4';
             }, 500);           
             
             setTimeout(() => {
-                currentAlert.remove();
+                currentAlert[0].remove();
             }, 2500);
         }
     }
@@ -74,6 +74,8 @@ class UI {
     clearFields() {
         this.deviceInput.value = '';
         this.osInput.value = '';
+        this.statusInput.value = '';
+        this.teamInput.value = '';
     }
 
     // Fill form to edit
@@ -87,10 +89,16 @@ class UI {
         this.changeFormState('edit');
     }
 
+    clearIdInput() {
+        this.idInput.value = '';
+    }
+    
     // Change the form state
 
     changeFormState(type) {
+
         if(type === 'edit') {
+
             this.addDeviceButton.value = 'Update device';
             this.addDeviceButton.className = 'blue-btn update';
 
@@ -109,7 +117,17 @@ class UI {
             parent.insertBefore(cancelButton, formEnd); 
         }
         else {
+            this.addDeviceButton.value = 'Add device';
+            this.addDeviceButton.className = 'blue-btn';
+            if(document.querySelector('.cancel')) {
+                document.querySelector('.cancel').remove();
+            }
 
+            // Clear ID from hidden input
+            this.clearIdInput();
+
+            //Clear entries
+            this.clearFields();
         }
     }
 

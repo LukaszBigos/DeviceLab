@@ -339,6 +339,20 @@ footer p {
     transition: 2000ms linear;
   }
 
+  .alert-warning {
+    color:#d43200;
+    background: #f39781;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin-top: 15px;
+    opacity: 1;
+    transition-property: opacity;
+    -webkit-transition: 2000ms linear;
+    transition: 2000ms linear;
+  }
+
   .update {
       background-color: #f8761f;
   }
