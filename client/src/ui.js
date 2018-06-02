@@ -1,12 +1,13 @@
 class UI {
     constructor() {
-          this.deviceInput = document.querySelector('#device-name');
-          this.osInput = document.querySelector('#os');
-          this.statusInput = document.querySelector('#status');
-          this.teamInput = document.querySelector('#team');
-          this.addDeviceButton = document.querySelector('#add-device-btn');
-          this.dataFetch = document.getElementById('data-fetch');
-          this.state = 'add'; 
+        this.idInput = document.querySelector('#device-id');
+        this.deviceInput = document.querySelector('#device-name');
+        this.osInput = document.querySelector('#os');
+        this.statusInput = document.querySelector('#status');
+        this.teamInput = document.querySelector('#team');
+        this.addDeviceButton = document.querySelector('#add-device-btn');
+        this.dataFetch = document.getElementById('data-fetch');
+        this.state = 'add'; 
     }
     showDevices(devices) {
         console.log('z ui show devices',  devices);
@@ -15,24 +16,15 @@ class UI {
         devices.forEach( (device) => {
             output += ` 
                 <tr>
-                    <td> 
-                    ${device.name}
-                    </td>
+                    <td>${device.name}</td>
+                    <td>${device.os}</td>
+                    <td>${device.status}</td>
+                    <td>${device.team}</td>
                     <td>
-                    ${device.os}
-                    </td>
-                    <td>
-                    ${device.status}
-                    </td>
-                    <td>
-                    ${device.team}
-                    </td>
-                    <td>
-                    <a href="#" data-id="${device.id}">
+                    <a href="#" class="edit" data-id="${device._id}">
                         <i class="fas fa-edit"></i>
-                    </a> 
-
-                    <a href="#" data-id="${device.id}">
+                    </a>
+                    <a href="#" class="delete" data-id="${device._id}">
                     <i class="fas fa-trash"></i>
                     </a> 
                     </td>
@@ -83,6 +75,44 @@ class UI {
         this.deviceInput.value = '';
         this.osInput.value = '';
     }
+
+    // Fill form to edit
+    fillForm(data) {
+        this.idInput.value = data.id;
+        this.deviceInput.value = data.name;
+        this.osInput.value = data.os;
+        this.statusInput.value = data.status;
+        this.teamInput.value = data.team;
+        
+        this.changeFormState('edit');
+    }
+
+    // Change the form state
+
+    changeFormState(type) {
+        if(type === 'edit') {
+            this.addDeviceButton.value = 'Update device';
+            this.addDeviceButton.className = 'blue-btn update';
+
+            // Create cancel button
+            const cancelButton = document.createElement('button');
+            cancelButton.className = 'blue-btn cancel';
+            cancelButton.appendChild(document.createTextNode('Cancel Edit'));
+
+            // Get parent
+            const parent = document.querySelector('#add-device');
+
+            //Get element to inser before
+            const formEnd = document.querySelector('.form-end');
+
+            // Insert Cancel button
+            parent.insertBefore(cancelButton, formEnd); 
+        }
+        else {
+
+        }
+    }
+
 }
 
 // export const ui = new UI;

@@ -339,4 +339,13 @@ footer p {
     transition: 2000ms linear;
   }
 
+  .update {
+      background-color: #f8761f;
+  }
+
+  #add-device .cancel {
+      background-color: #e2392d;
+      grid-row: 4;
+  }
+
 

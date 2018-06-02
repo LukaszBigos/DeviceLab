@@ -7,7 +7,10 @@ const ui = new UI();
 document.addEventListener('DOMContentLoaded', getDevices);
 
 // Listen for add device
-document.querySelector('#add-device-btn').addEventListener('click', submitDevice); 
+document.querySelector('#add-device-btn').addEventListener('click', submitDevice);
+
+// Listen for edit state
+document.querySelector('#device-list').addEventListener('click', enableEdit)
 
 // Get Devices
 function getDevices() {
@@ -38,4 +41,29 @@ function submitDevice() {
             getDevices();
         })
         .catch(err => console.log(err))
-} 
+}
+
+// Enable Edit State
+function enableEdit(e) {
+    if(e.target.parentElement.classList.contains('edit')) {
+        const id = e.target.parentElement.dataset.id;
+        const name = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        const os = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+        const status = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent;
+        const team = e.target.parentElement.parentElement.previousElementSibling.textContent;
+        
+        const data = {
+            id,
+            name,
+            os,
+            status,
+            team
+        }
+
+        // Fill form with selected record
+
+        ui.fillForm(data);
+    }
+
+    e.preventDefault();
+}
