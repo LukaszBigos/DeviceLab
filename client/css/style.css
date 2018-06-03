@@ -254,12 +254,11 @@ footer p {
 
 #data-fetch i {
     color: #30ace5;
-    font-size: 80%;
+    font-size: 100%;
 }
 
 #data-fetch i.fa-edit:hover {
     color: darkblue;
-    font-size: 100%; 
 }
 
 #data-fetch i.fa-trash {
@@ -268,8 +267,7 @@ footer p {
 }
 
 #data-fetch i.fa-trash:hover {
-    color: red;
-    font-size: 100%; 
+    color: red; 
 }
 
 .fa-trash {
@@ -358,7 +356,7 @@ footer p {
   }
 
   #add-device .cancel {
-      background-color: #e2392d;
+      background-color: #727272;
       grid-row: 4;
   }
 

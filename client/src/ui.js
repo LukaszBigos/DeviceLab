@@ -25,7 +25,7 @@ class UI {
                         <i class="fas fa-edit"></i>
                     </a>
                     <a href="#" class="delete" data-id="${device._id}">
-                    <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash"></i>
                     </a> 
                     </td>
                 </tr>`;
@@ -50,7 +50,7 @@ class UI {
         const searchDevice = document.querySelector('#filter-device');
 
         // Insert alert div
-        container.insertBefore(div, searchDevice)
+        container.insertBefore(div, searchDevice);
 
         // Remove alert
         this.clearAlert();
@@ -110,12 +110,13 @@ class UI {
             // Get parent
             const parent = document.querySelector('#add-device');
 
-            //Get element to inser before
+            //Get element to insert before
             const formEnd = document.querySelector('.form-end');
 
             // Insert Cancel button
-            parent.insertBefore(cancelButton, formEnd); 
+            parent.insertBefore(cancelButton, formEnd);
         }
+
         else {
             this.addDeviceButton.value = 'Add device';
             this.addDeviceButton.className = 'blue-btn';

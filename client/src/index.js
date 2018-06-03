@@ -15,6 +15,9 @@ document.querySelector('#device-list').addEventListener('click', enableEdit);
 // Listen for Cancel
 document.querySelector('#add-device').addEventListener('click', cancelEdit);
 
+// Listen for Delete
+document.querySelector('#device-list').addEventListener('click', deleteDevice);
+
 // Get Devices
 function getDevices() {
     http.get('http://localhost:3000/api/devices')
@@ -68,6 +71,21 @@ function submitDevice() {
  
 }
 
+function deleteDevice(e) {
+    if(e.target.parentElement.classList.contains('delete')) {
+      const id = e.target.parentElement.dataset.id;
+      if(confirm('Are you sure?')) {
+        http.delete(`http://localhost:3000/api/devices/${id}`)
+          .then(data => {
+            ui.showAlert('Device removed', 'alert alert-warning');
+            getDevices();
+          })
+          .catch(err => console.log(err));
+      }
+    }
+    e.preventDefault();
+  }
+
 // Enable Edit State
 function enableEdit(e) {
     if(e.target.parentElement.classList.contains('edit')) {
@@ -86,7 +104,6 @@ function enableEdit(e) {
         }
 
         // Fill form with selected record
-
         ui.fillForm(data);
     }
 
@@ -100,3 +117,4 @@ function cancelEdit(e) {
     }
     e.preventDefault();
 }
+
