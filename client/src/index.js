@@ -24,31 +24,46 @@ function getDevices() {
 
 //Add Device
 function submitDevice() {
+    const id = document.querySelector('#device-id').value;
     const name = document.querySelector('#device-name').value;
     const os = document.querySelector('#os').value;
     const status = document.querySelector('#status').value;
     const team = document.querySelector('#team').value;
 
+    const data = {
+        name, // same as name: name etc
+        os,
+        status,
+        team
+    }
+
     if(name === '' || os === '' || status === '' ||  team === '' ) {
         ui.showAlert('Please fill in all fields', 'alert-warning');
     }
 
-    else {
-        const data = {
-            name, // same as name: name etc
-            os,
-            status,
-            team
-        }
-    
-        // Create Device
-        http.post('http://localhost:3000/api/devices', data)
+    else {    
+        //check for ID 
+        if(id === '') {
+            // Create Device
+            http.post('http://localhost:3000/api/devices', data)
             .then(data => {
                 ui.showAlert('New device added', 'alert-success');
                 ui.clearFields();
                 getDevices();
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
+        }
+        else {
+            // Update Post
+            http.put(`http://localhost:3000/api/devices/${id}`, data)
+            .then(data => {
+                ui.showAlert('Device info updated', 'alert-success');
+                ui.changeFormState('add');
+                getDevices();
+            })
+            .catch(err => console.log(err));
+        }
+
     }
  
 }
