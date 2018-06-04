@@ -202,31 +202,7 @@ input:focus:-moz-placeholder {
 
 #device-list {
     margin-top: 35px;
-    /* display: grid;
-    grid-template-columns: repeat(5, minmax(50px, auto));
-    grid-template-areas: 
-    "name os status details remover"; */
 }
-
-/* #device-list th:nth-child(1) {
-    grid-area: name;
-}
-
-#device-list th:nth-child(2) {
-    grid-area: os;
-}
-
-#device-list th:nth-child(3) {
-    grid-area: status;
-}
-
-#device-list th:nth-child(4) {
-    grid-area: details;
-}
-
-#device-list th:nth-child(5) {
-    grid-area: remover;
-}  */
 
 footer {
     background-color: black;
@@ -268,6 +244,10 @@ footer p {
 
 #data-fetch i.fa-trash:hover {
     color: red; 
+}
+
+#data-fetch a {
+    text-decoration: none;
 }
 
 .fa-trash {
@@ -359,5 +339,7 @@ footer p {
       background-color: #727272;
       grid-row: 4;
   }
+
+
 
 
